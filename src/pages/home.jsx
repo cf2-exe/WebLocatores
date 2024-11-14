@@ -1,5 +1,6 @@
-import LocomotiveScroll from "locomotive-scroll";
-import { useEffect, useRef } from "react";
+/* eslint-disable no-unused-vars */
+import locomotiveScroll from "locomotive-scroll";
+import React , { useEffect, useRef } from "react";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import Navbar from "@/components/navbar";
 import { Button2 } from "@/components/button";
@@ -9,19 +10,14 @@ import Accordion from "@/components/accordion";
 import Footer from "@/components/footer";
 
 export default function Home() {
-  const scrollRef = useRef(null);
+  const scrollRef = React.createRef();
 
   useEffect(() => {
-    console.log(scrollRef.current);  // Check if scrollRef is properly set
-    const scroll = new LocomotiveScroll({
+    const scroll = new locomotiveScroll({
       el: scrollRef.current,
-      smooth: true,
+      smooth: true
     });
-  
-    return () => {
-      scroll.destroy();
-    };
-  }, []);
+  });
 
   const Cursor = () => {
     const cursorRef = useRef();
@@ -75,13 +71,13 @@ export default function Home() {
       
       <div
         ref={scrollRef}
-        className="flex flex-col gap-[10rem] max-md:gap-[3rem] relative w-full"
+        className="scroll flex flex-col gap-[10rem] max-md:gap-[3rem] relative w-full"
         data-scroll-container
       >
 
         <Navbar />
         <section className="p-8 w-full relative flex flex-col items-center justify-center gap-[3rem] max-md:p-0">
-          <div className="w-[100%] h-[80vh] justify-center items-center flex flex-col gap-[1rem] p-4 text-center bg-[linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.5)),url('src/images/coding-laptop.jpg')] bg-center bg-cover bg-no-repeat rounded-[25px] max-md:rounded-none">
+          <div className="w-[100%] h-[80vh] justify-center items-center flex flex-col gap-[1rem] p-4 text-center bg-[linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.5)),url('public/laptop.jpg')] bg-center bg-cover bg-no-repeat rounded-[25px] max-md:rounded-none">
             <h1 className="text-[7rem] text-[#bcddf0] tracking-tighter max-md:leading-[3rem] max-md:text-[3rem] bg-custom-linear bg-clip-text inline-block text-transparent">
               Welcome to weblocatores
             </h1>

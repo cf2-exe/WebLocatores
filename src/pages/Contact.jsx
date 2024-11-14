@@ -17,7 +17,7 @@ export default function Contact() {
       <Navbar />
       <Cursor />
       <section className="h-[100vh] w-full flex items-center justify-center relative">
-        <div className="w-[40%] h-full bg-[url('src/images/laptop.jpg')] bg-center bg-cover bg-no-repeat"></div>
+        <div className="w-[40%] h-full bg-[url('public/laptop.jpg')] bg-center bg-cover bg-no-repeat"></div>
         <div className="w-[60%] h-full relative px-[1rem] py-8 flex flex-col items-center gap-[2rem] justify-center">
           <Radio isRegister={isRegister} toggleForm={toggleForm} />
           <Form isRegister={isRegister} />
